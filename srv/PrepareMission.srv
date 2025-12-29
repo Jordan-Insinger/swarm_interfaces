@@ -4,4 +4,4 @@
 
 ---
 bool ready
-string mesage
+string agent_id

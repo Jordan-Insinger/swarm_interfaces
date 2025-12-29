@@ -7,14 +7,21 @@ find_package(rosidl_default_generators REQUIRED)
 
 # CRITICAL: Generate interfaces FIRST, before any executables
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "srv/PrepareMission.srv"
-  "srv/InitiateTakeoff.srv"
-  "srv/StartMission.srv"
   "srv/ConnectAgent.srv"
   "srv/DisconnectAgent.srv"
   "msg/ConnectedAgents.msg"
   "msg/Heartbeat.msg"
+  "msg/PrepareMissionCommand.msg"
+  "msg/PrepareMissionResponse.msg"
+  "msg/InitiateTakeoffCommand.msg"
+  "msg/InitiateTakeoffResponse.msg"
+  "msg/StartMissionCommand.msg"
 )
+
+# Set the C++ standard for this package
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
