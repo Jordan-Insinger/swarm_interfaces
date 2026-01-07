@@ -1,3 +1,3 @@
-float64 takeoff_altitude
 uint32 timestamp
+float64 takeoff_height
 
