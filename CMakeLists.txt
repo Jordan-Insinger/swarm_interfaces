@@ -16,6 +16,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/InitiateTakeoffCommand.msg"
   "msg/InitiateTakeoffResponse.msg"
   "msg/StartMissionCommand.msg"
+  "msg/InitiateLandCommand.msg"
+  "msg/InitiateLandResponse.msg"
 )
 
 # Set the C++ standard for this package
