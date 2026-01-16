@@ -4,7 +4,7 @@
   <name>swarm_interfaces</name>
   <version>0.0.0</version>
   <description>Library for service definitions</description>
-  <maintainer email="Jordan.Insinger@proton.me">jordan</maintainer>
+  <maintainer email="Jordan.Insinger@pm.me">jordan</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
