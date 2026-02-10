@@ -9,6 +9,7 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/ConnectAgent.srv"
   "srv/DisconnectAgent.srv"
+  "srv/StartExperiment.srv"
   "msg/ConnectedAgents.msg"
   "msg/Heartbeat.msg"
   "msg/PrepareExperimentCommand.msg"
