@@ -1,6 +1,6 @@
 #include "swarm_interfaces/frame_conversions.hpp"
 
-using namespace swarm_interfaces::frame_conversions;
+namespace swarm_interfaces::frame_conversions {
 
 GeoPose apark_to_global(const geometry_msgs::msg::Pose &apark_pose, double altitude_amsl) {
 
@@ -39,3 +39,5 @@ GeoPose apark_to_global(const geometry_msgs::msg::Pose &apark_pose, double altit
     return global_pose;
 
 }
+
+} // namespace swarm_interfaces::frame_conversions

@@ -33,7 +33,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
 )
 
 # Actual library target for your C++ utility headers/source
-add_library(${PROJECT_NAME}_lib
+add_library(${PROJECT_NAME}_lib SHARED
     src/frame_conversions.cpp
 )
 
@@ -63,7 +63,7 @@ install(DIRECTORY include/
 )
 
 ament_export_targets(${PROJECT_NAME}_libTargets HAS_LIBRARY_TARGET)
-ament_export_dependencies(rclcpp geometry_msgs geodesy geographic_msgs)
+ament_export_dependencies(rclcpp geometry_msgs geodesy geographic_msgs tf2 tf2_geometry_msgs)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

@@ -8,14 +8,18 @@
 using GeoPose = geographic_msgs::msg::GeoPose;
 using Pose = geometry_msgs::msg::Pose;
 
-static double origin_x = 368305.0700699703;
-static double origin_y = 3278357.100811797;
-static double origin_z = 26.90878;
-static double origin_r = 0.6021965548550632;
-static double utm_zone = 17;
-static char utm_band = 'R';
+constexpr double origin_x = 368305.0700699703;
+constexpr double origin_y = 3278357.100811797;
+constexpr double origin_z = 26.90878;
+constexpr double origin_r = 0.6021965548550632;
+constexpr double utm_zone = 17;
+constexpr char utm_band = 'R';
 
-tf2::Quaternion q_apark_to_utm;
+inline tf2::Quaternion q_apark_to_utm = []() {
+    tf2::Quaternion q;
+    q.setRPY(0, 0, -origin_r);
+    return q;
+}();
 
 namespace swarm_interfaces::frame_conversions {
 
