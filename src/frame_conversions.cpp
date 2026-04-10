@@ -40,4 +40,28 @@ GeoPose apark_to_global(const geometry_msgs::msg::Pose &apark_pose, double altit
 
 }
 
+Twist apark_to_enu(const Twist& vel) {
+
+    Twist vel_enu;
+    double cos_origin = cos(origin_r);
+    double sin_origin = sin(origin_r);
+
+    vel_enu.linear.x = cos_origin*vel.linear.x + sin_origin*vel.linear.y;
+    vel_enu.linear.y = -sin_origin*vel.linear.x + cos_origin*vel.linear.y;
+    vel_enu.linear.z = vel.linear.z;
+    vel_enu.angular.z = vel.angular.z;
+
+    return vel_enu;
+}
+
+double quat_to_yaw(const Quaternion& quat) {
+
+    // yaw (z-axis rotation)
+    double siny_cosp = 2 * (quat.w * quat.z + quat.x * quat.y);
+    double cosy_cosp = 1 - 2 * (quat.y * quat.y + quat.z * quat.z);
+    double yaw = std::atan2(siny_cosp, cosy_cosp);
+    return yaw;
+
+}
+
 } // namespace swarm_interfaces::frame_conversions

@@ -7,6 +7,8 @@
 
 using GeoPose = geographic_msgs::msg::GeoPose;
 using Pose = geometry_msgs::msg::Pose;
+using Twist = geometry_msgs::msg::Twist;
+using Quaternion = geometry_msgs::msg::Quaternion;
 
 constexpr double origin_x = 368305.0700699703;
 constexpr double origin_y = 3278357.100811797;
@@ -23,7 +25,11 @@ inline tf2::Quaternion q_apark_to_utm = []() {
 
 namespace swarm_interfaces::frame_conversions {
 
-    GeoPose apark_to_global(const Pose &apark_pose, double altitude_amsl);
+    GeoPose apark_to_global(const Pose& apark_pose, double altitude_amsl);
+
+    Twist apark_to_enu(const Twist &vel);
+
+    double quat_to_yaw(const Quaternion& quat);
 
 } // namespace swarm_interfaces::frame_conversions
 
