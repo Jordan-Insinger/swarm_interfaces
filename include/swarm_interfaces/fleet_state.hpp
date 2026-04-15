@@ -1,7 +1,7 @@
 namespace constants {
 
     constexpr double LOW_BATTERY_THRESHOLD = 20.0;
-    constexpr double HEARTBEAT_TIMEOUT = 0.5; // seconds
+    constexpr int64_t HEARTBEAT_TIMEOUT = 500000000; // 500 ms
 }
 
 enum class FleetState {
@@ -26,7 +26,7 @@ struct AgentStatus {
     std::string agent_id;
     AgentState agent_state;
     bool comms_healthy;
-    uint32_t last_heartbeat;
+    builtin_interfaces::msg::Time last_heartbeat;
     double battery;
 };
 

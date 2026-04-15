@@ -1,3 +1,3 @@
 string agent_name
 float64 battery_level
-uint32 timestamp
+builtin_interfaces/Time timestamp
