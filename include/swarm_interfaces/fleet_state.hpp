@@ -15,11 +15,11 @@ enum class FleetState {
 };
 
 enum AgentState {
-    UNDEFINED = 0,
-    ON_GROUND,
-    IN_AIR,
-    TAKEOFF,
-    LANDING 
+    undefined = 0,
+    on_ground,
+    in_air,
+    takeoff,
+    landing 
 };
 
 struct AgentStatus {

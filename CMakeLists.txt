@@ -30,6 +30,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/StartExperimentCommand.msg"
   "msg/InitiateLandCommand.msg"
   "msg/InitiateLandResponse.msg"
+  "msg/DroneState.msg"
   DEPENDENCIES geometry_msgs geographic_msgs
 )
 
