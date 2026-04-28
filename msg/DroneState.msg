@@ -3,22 +3,24 @@ std_msgs/Header header
 string agent_id
 
 # flight state
-uint8 agent_state       # Mavros Extended State
-string flight_mode      # Mavros State
 bool armed
 bool offboard_mode
+string flight_mode       # raw MAVROS mode string
+uint8 landed_state
 
-# position (Autonomy Park frame)
-geometry_msgs/PoseStamped local_pose
+# local position (Autonomy Park Frame)
+geometry_msgs/PoseStamped apark_pose
 
-# velocity
-geometry_msgs/TwistStamped velocity
-
-# global
+# global position (lat/lon)
 geographic_msgs/GeoPoseStamped global_pose
 
-# health
-float32 battery_percentage
-float32 battery_voltage
+# local velocity (Autonomy Park Frame)
+geometry_msgs/TwistStamped apark_vel
 
+# body velocity (enu)
+geometry_msgs/TwistStamped
+
+# health
+float32 battery_percent
+float32 battery_voltage
 

@@ -14,7 +14,7 @@ enum class FleetState {
     LANDING
 };
 
-enum AgentState {
+enum LandedState {
     undefined = 0,
     on_ground,
     in_air,
