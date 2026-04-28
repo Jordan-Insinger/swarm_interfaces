@@ -17,8 +17,8 @@ geographic_msgs/GeoPoseStamped global_pose
 # local velocity (Autonomy Park Frame)
 geometry_msgs/TwistStamped apark_vel
 
-# body velocity (enu)
-geometry_msgs/TwistStamped
+# body velocity
+geometry_msgs/Twist body_vel
 
 # health
 float32 battery_percent
